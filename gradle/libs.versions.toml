@@ -35,6 +35,9 @@ okhttp = "4.12.0"
 # Retrofit
 retrofit = "2.11.0"
 
+# SQLDelight
+sqldelight = "2.3.2"
+
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
 androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
@@ -80,11 +83,17 @@ okhttp-logging = { group = "com.squareup.okhttp3", name = "logging-interceptor",
 retrofit-core = { group = "com.squareup.retrofit2", name = "retrofit", version.ref = "retrofit" }
 retrofit-kotlin-serialization = { group = "com.squareup.retrofit2", name = "converter-kotlinx-serialization", version.ref = "retrofit" }
 
+# SQLDelight
+sqldelight-android-driver = { group = "app.cash.sqldelight", name = "android-driver", version.ref = "sqldelight" }
+sqldelight-async-extensions = { group = "app.cash.sqldelight", name = "async-extensions", version.ref = "sqldelight" }
+sqldelight-coroutines-extensions = { group = "app.cash.sqldelight", name = "coroutines-extensions", version.ref = "sqldelight" }
+
 # Dependencies of the included build-logic
 android-gradlePlugin = { group = "com.android.tools.build", name = "gradle-api", version.ref = "agp" }
 android-tools-common = { group = "com.android.tools", name = "common", version.ref = "androidTools" }
 compose-gradlePlugin = { module = "org.jetbrains.kotlin:compose-compiler-gradle-plugin", version.ref = "kotlin" }
 kotlin-gradlePlugin = { group = "org.jetbrains.kotlin", name = "kotlin-gradle-plugin", version.ref = "kotlin" }
+sqldelight = { group = "app.cash.sqldelight", name = "gradle-plugin", version.ref = "sqldelight" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
@@ -99,6 +108,9 @@ hilt = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
 
 ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
 
+# SQLDelight
+sqldelight = { id = "app.cash.sqldelight", version.ref = "sqldelight" }
+
 # Plugins defined by this project
 tasktracker-android-application = { id = "tasktracker.android.application" }
 tasktracker-android-application-compose = { id = "tasktracker.android.application.compose" }
@@ -108,5 +120,6 @@ tasktracker-android-library = { id = "tasktracker.android.library" }
 tasktracker-android-library-compose = { id = "tasktracker.android.library.compose" }
 tasktracker-jvm-library = { id = "tasktracker.jvm.library" }
 tasktracker-hilt = { id = "tasktracker.hilt" }
+tasktracker-sqldelight = { id = "tasktracker-sqldelight" }
 
 [bundles]

@@ -51,6 +51,7 @@ dependencies {
     implementation(projects.core.designsystem)
     implementation(projects.core.model)
     implementation(projects.core.data)
+    implementation(projects.core.database)
 
     implementation(projects.feature.task.api)
     implementation(projects.feature.task.impl)

@@ -23,6 +23,7 @@ dependencies {
     compileOnly(libs.android.tools.common)
     compileOnly(libs.compose.gradlePlugin)
     compileOnly(libs.kotlin.gradlePlugin)
+    compileOnly(libs.sqldelight)
 }
 
 tasks {
@@ -66,6 +67,10 @@ gradlePlugin {
         register("jvmLibrary") {
             id = libs.plugins.tasktracker.jvm.library.get().pluginId
             implementationClass = "JvmLibraryConventionPlugin"
+        }
+        register("sqldelight") {
+            id = libs.plugins.tasktracker.sqldelight.get().pluginId
+            implementationClass = "SqlDelightConventionPlugin"
         }
     }
 }
