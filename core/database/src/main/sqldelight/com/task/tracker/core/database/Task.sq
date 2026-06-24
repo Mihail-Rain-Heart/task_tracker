@@ -1,0 +1,27 @@
+import com.task.tracker.core.model.TaskStatus;
+import kotlin.Boolean;
+
+CREATE TABLE task (
+    id INTEGER NOT NULL PRIMARY KEY,
+    status TEXT AS TaskStatus NOT NULL,
+    isSyncRequired INTEGER AS Boolean NOT NULL,
+    syncVersion INTEGER NOT NULL
+);
+
+selectAll:
+SELECT * FROM task;
+
+selectById:
+SELECT * FROM task WHERE id = :id;
+
+upsert {
+    UPDATE task
+    SET
+        status = :status,
+        isSyncRequired = :syncRequired,
+        syncVersion = :syncVersion
+    WHERE id = :id;
+
+    INSERT OR IGNORE INTO task(id, status, isSyncRequired, syncVersion)
+    VALUES (:id, :status,:syncRequired, :syncVersion);
+}
