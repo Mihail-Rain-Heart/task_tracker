@@ -1,0 +1,14 @@
+plugins {
+    alias(libs.plugins.tasktracker.android.feature.impl)
+    alias(libs.plugins.tasktracker.android.library.compose)
+}
+
+android {
+    namespace = "com.task.tracker.feature.task.impl"
+}
+
+dependencies {
+    implementation(projects.feature.task.api)
+
+    implementation(projects.core.data)
+}

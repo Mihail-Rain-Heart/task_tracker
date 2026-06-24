@@ -42,3 +42,6 @@ include(":core:data")
 include(":core:common")
 include(":core:network")
 include(":core:domain")
+
+include(":feature:task:api")
+include(":feature:task:impl")

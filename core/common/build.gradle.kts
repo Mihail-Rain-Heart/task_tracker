@@ -1,5 +1,6 @@
 plugins {
     alias(libs.plugins.tasktracker.jvm.library)
+    alias(libs.plugins.tasktracker.hilt)
 }
 
 dependencies {

@@ -52,6 +52,9 @@ dependencies {
     implementation(projects.core.model)
     implementation(projects.core.data)
 
+    implementation(projects.feature.task.api)
+    implementation(projects.feature.task.impl)
+
     implementation(libs.androidx.activity.compose)
     implementation(libs.androidx.compose.material3)
     implementation(libs.androidx.core.ktx)
