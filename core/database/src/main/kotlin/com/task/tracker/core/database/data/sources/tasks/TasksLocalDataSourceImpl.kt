@@ -14,7 +14,7 @@ internal class TasksLocalDataSourceImpl @Inject constructor(
     private val db: Database,
 ) : TasksLocalDataSource {
 
-    override suspend fun getTasks(context: CoroutineContext): Flow<List<Task>> {
+    override fun getTasks(context: CoroutineContext): Flow<List<Task>> {
         return db.taskQueries.selectAll().asFlow().mapToList(context)
     }
 

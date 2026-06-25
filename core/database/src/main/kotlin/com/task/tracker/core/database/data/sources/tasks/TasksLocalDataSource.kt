@@ -6,7 +6,7 @@ import kotlin.coroutines.CoroutineContext
 
 interface TasksLocalDataSource {
 
-    suspend fun getTasks(context: CoroutineContext): Flow<List<Task>>
+    fun getTasks(context: CoroutineContext): Flow<List<Task>>
 
     suspend fun getTaskById(id: Long): Task?
 

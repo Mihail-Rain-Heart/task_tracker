@@ -34,6 +34,7 @@ okhttp = "4.12.0"
 
 # Retrofit
 retrofit = "2.11.0"
+kotlinxDatetime = "0.8.0"
 
 # SQLDelight
 sqldelight = "2.3.2"
@@ -78,10 +79,12 @@ kotlinx-coroutines-core = { group = "org.jetbrains.kotlinx", name = "kotlinx-cor
 
 # OkHttp
 okhttp-logging = { group = "com.squareup.okhttp3", name = "logging-interceptor", version.ref = "okhttp" }
+okhttp-mockServer = { group = "com.squareup.okhttp3", name = "mockwebserver", version.ref = "okhttp" }
 
 # Retrofit
 retrofit-core = { group = "com.squareup.retrofit2", name = "retrofit", version.ref = "retrofit" }
 retrofit-kotlin-serialization = { group = "com.squareup.retrofit2", name = "converter-kotlinx-serialization", version.ref = "retrofit" }
+kotlinx-datetime = { group = "org.jetbrains.kotlinx", name = "kotlinx-datetime", version.ref = "kotlinxDatetime" }
 
 # SQLDelight
 sqldelight-android-driver = { group = "app.cash.sqldelight", name = "android-driver", version.ref = "sqldelight" }
@@ -110,6 +113,9 @@ ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
 
 # SQLDelight
 sqldelight = { id = "app.cash.sqldelight", version.ref = "sqldelight" }
+
+# Kotlinx
+kotlinx-serialization = { id = "kotlinx-serialization" }
 
 # Plugins defined by this project
 tasktracker-android-application = { id = "tasktracker.android.application" }

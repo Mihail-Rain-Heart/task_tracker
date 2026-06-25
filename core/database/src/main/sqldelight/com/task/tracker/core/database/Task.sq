@@ -1,11 +1,13 @@
 import com.task.tracker.core.model.TaskStatus;
 import kotlin.Boolean;
+import kotlin.time.Instant;
 
 CREATE TABLE task (
     id INTEGER NOT NULL PRIMARY KEY,
     status TEXT AS TaskStatus NOT NULL,
     isSyncRequired INTEGER AS Boolean NOT NULL,
-    syncVersion INTEGER NOT NULL
+    syncVersion INTEGER NOT NULL,
+    updatedAt INTEGER AS Instant NOT NULL
 );
 
 selectAll:
@@ -19,9 +21,10 @@ upsert {
     SET
         status = :status,
         isSyncRequired = :syncRequired,
-        syncVersion = :syncVersion
+        syncVersion = :syncVersion,
+        updatedAt = :updatedAt
     WHERE id = :id;
 
-    INSERT OR IGNORE INTO task(id, status, isSyncRequired, syncVersion)
-    VALUES (:id, :status,:syncRequired, :syncVersion);
+    INSERT OR IGNORE INTO task(id, status, isSyncRequired, syncVersion, updatedAt)
+    VALUES (:id, :status,:syncRequired, :syncVersion, :updatedAt);
 }

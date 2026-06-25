@@ -5,6 +5,7 @@ import app.cash.sqldelight.EnumColumnAdapter
 import app.cash.sqldelight.driver.android.AndroidSqliteDriver
 import com.task.tracker.core.database.Database
 import com.task.tracker.core.database.Task
+import com.task.tracker.core.database.adapter.InstantAdapter
 import com.task.tracker.core.database.utils.DatabaseCallbackLog
 import dagger.Module
 import dagger.Provides
@@ -34,8 +35,9 @@ internal object DatabaseModule {
         return Database(
             driver = driver,
             taskAdapter = Task.Adapter(
-                statusAdapter = EnumColumnAdapter()
-            )
+                statusAdapter = EnumColumnAdapter(),
+                updatedAtAdapter = InstantAdapter()
+            ),
         )
     }
 }
