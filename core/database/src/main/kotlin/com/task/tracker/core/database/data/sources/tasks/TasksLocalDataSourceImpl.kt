@@ -37,7 +37,8 @@ internal class TasksLocalDataSourceImpl @Inject constructor(
             id = task.id,
             status = task.status,
             syncVersion = task.syncVersion,
-            syncRequired = task.isSyncRequired
+            syncRequired = task.isSyncRequired,
+            updatedAt = task.updatedAt,
         )
     }
 }

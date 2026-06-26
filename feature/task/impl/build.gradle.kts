@@ -10,5 +10,6 @@ android {
 dependencies {
     implementation(projects.feature.task.api)
 
+    implementation(projects.core.domain)
     implementation(projects.core.data)
 }
