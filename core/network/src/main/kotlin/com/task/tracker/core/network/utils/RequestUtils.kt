@@ -67,6 +67,6 @@ private fun shouldRetry(throwable: Throwable): Boolean {
     }
 }
 
-private class BackendException(message: String) : Exception(message)
+class BackendException(message: String) : Exception(message)
 
 private const val MAX_RETRY_COUNT = 2

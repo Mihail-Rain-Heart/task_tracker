@@ -1,5 +1,6 @@
 package com.task.tracker.core.database.data.sources.tasks
 
+import app.cash.sqldelight.async.coroutines.awaitAsList
 import app.cash.sqldelight.async.coroutines.awaitAsOneOrNull
 import app.cash.sqldelight.coroutines.asFlow
 import app.cash.sqldelight.coroutines.mapToList
@@ -16,6 +17,10 @@ internal class TasksLocalDataSourceImpl @Inject constructor(
 
     override fun getTasks(context: CoroutineContext): Flow<List<Task>> {
         return db.taskQueries.selectAll().asFlow().mapToList(context)
+    }
+
+    override suspend fun getSyncRequiredTasks(): List<Task> {
+        return db.taskQueries.selectSyncRequired().awaitAsList()
     }
 
     override suspend fun getTaskById(id: Long): Task? {
@@ -36,8 +41,9 @@ internal class TasksLocalDataSourceImpl @Inject constructor(
         return db.taskQueries.upsert(
             id = task.id,
             status = task.status,
-            syncVersion = task.syncVersion,
-            syncRequired = task.isSyncRequired,
+            title = task.title,
+            isSyncRequired = task.isSyncRequired,
+            isSyncing = task.isSyncing,
             updatedAt = task.updatedAt,
         )
     }

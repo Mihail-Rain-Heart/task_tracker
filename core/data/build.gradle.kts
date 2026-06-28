@@ -12,4 +12,7 @@ dependencies {
     api(projects.core.common)
     api(projects.core.network)
     api(projects.core.database)
+
+    implementation(libs.workManager)
+    implementation(libs.hilt.work)
 }

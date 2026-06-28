@@ -5,9 +5,10 @@ import kotlin.time.Instant;
 CREATE TABLE task (
     id INTEGER NOT NULL PRIMARY KEY,
     status TEXT AS TaskStatus NOT NULL,
+    title TEXT,
     isSyncRequired INTEGER AS Boolean NOT NULL,
-    syncVersion INTEGER NOT NULL,
-    updatedAt INTEGER AS Instant NOT NULL
+    isSyncing INTEGER AS Boolean NOT NULL,
+    updatedAt INTEGER AS Instant NOT NULL -- Не модифицировать это поле на клиенте! Записывать только то время, которое возвращает бекенд или то, что уже лежит в БД. Время на клиенте хрупкое!
 );
 
 selectAll:
@@ -16,15 +17,21 @@ SELECT * FROM task;
 selectById:
 SELECT * FROM task WHERE id = :id;
 
+selectSyncRequired:
+SELECT *
+FROM task
+WHERE isSyncRequired = 1;
+
 upsert {
     UPDATE task
     SET
         status = :status,
-        isSyncRequired = :syncRequired,
-        syncVersion = :syncVersion,
+        title = :title,
+        isSyncRequired = :isSyncRequired,
+        isSyncing = :isSyncing,
         updatedAt = :updatedAt
     WHERE id = :id;
 
-    INSERT OR IGNORE INTO task(id, status, isSyncRequired, syncVersion, updatedAt)
-    VALUES (:id, :status,:syncRequired, :syncVersion, :updatedAt);
+    INSERT OR IGNORE INTO task(id, status, title, isSyncRequired, isSyncing, updatedAt)
+    VALUES (:id, :status, :title,:isSyncRequired, :isSyncing, :updatedAt);
 }

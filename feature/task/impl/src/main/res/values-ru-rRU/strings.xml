@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Statuses -->
+    <string name="status_todo">сделать</string>
+    <string name="status_in_progress">в процессе</string>
+    <string name="status_done">завершено</string>
+
+    <string name="sync_indicator">Синхронизировать</string>
+
+    <string name="empty_title">Заголовок пуст</string>
+</resources>

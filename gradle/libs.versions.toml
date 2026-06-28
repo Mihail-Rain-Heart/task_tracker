@@ -19,6 +19,7 @@ androidxNavigation3 = "1.1.0"
 kotlinxSerializationJson = "1.11.0"
 
 hilt = "2.59.2"
+hiltWork = "1.4.0-rc01"
 
 ksp = "2.3.6"
 
@@ -38,6 +39,9 @@ kotlinxDatetime = "0.8.0"
 
 # SQLDelight
 sqldelight = "2.3.2"
+
+# WorkManager
+workManager = "2.11.2"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -74,6 +78,8 @@ hilt-android = { group = "com.google.dagger", name = "hilt-android", version.ref
 hilt-compiler = { group = "com.google.dagger", name = "hilt-compiler", version.ref = "hilt" }
 hilt-core = { group = "com.google.dagger", name = "hilt-core", version.ref = "hilt" }
 
+hilt-work = { group = "androidx.hilt", name = "hilt-work", version.ref = "hiltWork" }
+
 # Coroutines
 kotlinx-coroutines-core = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-core", version.ref = "kotlinxCoroutines" }
 
@@ -90,6 +96,9 @@ kotlinx-datetime = { group = "org.jetbrains.kotlinx", name = "kotlinx-datetime",
 sqldelight-android-driver = { group = "app.cash.sqldelight", name = "android-driver", version.ref = "sqldelight" }
 sqldelight-async-extensions = { group = "app.cash.sqldelight", name = "async-extensions", version.ref = "sqldelight" }
 sqldelight-coroutines-extensions = { group = "app.cash.sqldelight", name = "coroutines-extensions", version.ref = "sqldelight" }
+
+# WorkManager
+workManager = { group = "androidx.work", name = "work-runtime-ktx", version.ref = "workManager" }
 
 # Dependencies of the included build-logic
 android-gradlePlugin = { group = "com.android.tools.build", name = "gradle-api", version.ref = "agp" }

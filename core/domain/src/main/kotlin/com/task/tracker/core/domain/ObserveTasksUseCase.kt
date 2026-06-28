@@ -5,7 +5,7 @@ import com.task.tracker.core.model.Task
 import javax.inject.Inject
 import kotlinx.coroutines.flow.Flow
 
-class GetTasksUseCase @Inject constructor(
+class ObserveTasksUseCase @Inject constructor(
     private val repository: TasksRepository,
 ) {
 

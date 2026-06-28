@@ -8,15 +8,26 @@ import com.task.tracker.core.database.Task as TaskEntity
 
 fun TaskEntity.toDomain(): Task = Task(
     id = id,
+    title = title,
     status = status,
     isSyncRequired = isSyncRequired,
+    isSyncing = isSyncing,
+    updatedAt = updatedAt,
 )
 
 fun NetworkTask.toEntity(): TaskEntity = TaskEntity(
     id = id,
     status = status.toDomain(),
+    title = title,
     isSyncRequired = false,
-    syncVersion = 0,
+    isSyncing = false,
+    updatedAt = updatedAt,
+)
+
+fun TaskEntity.toNetwork(): NetworkTask = NetworkTask(
+    id = id,
+    title = title,
+    status = status.toNetwork(),
     updatedAt = updatedAt,
 )
 
