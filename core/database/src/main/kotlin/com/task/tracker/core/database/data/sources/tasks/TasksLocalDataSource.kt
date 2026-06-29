@@ -8,6 +8,8 @@ interface TasksLocalDataSource {
 
     fun getTasks(context: CoroutineContext): Flow<List<Task>>
 
+    suspend fun getSyncRequiredTasks(): List<Task>
+
     suspend fun getTaskById(id: Long): Task?
 
     fun setTask(task: Task)

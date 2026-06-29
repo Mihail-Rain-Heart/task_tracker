@@ -12,4 +12,10 @@ dependencies {
 
     implementation(projects.core.domain)
     implementation(projects.core.data)
+
+    // tests
+    testImplementation(libs.junit)
+    testImplementation(libs.kotlinx.coroutines.test)
+    testImplementation(libs.mock)
+    testImplementation(libs.turbine)
 }

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Statuses -->
+    <string name="status_todo">to do</string>
+    <string name="status_in_progress">in progress</string>
+    <string name="status_done">done</string>
+
+    <string name="sync_indicator">Synchronize</string>
+
+    <string name="empty_title">Title is empty</string>
+</resources>

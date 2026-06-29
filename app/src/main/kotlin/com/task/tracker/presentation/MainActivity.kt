@@ -6,7 +6,7 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.core.view.WindowCompat
-import com.task.tracker.core.data.util.NetworkMonitor
+import com.task.tracker.core.common.network.NetworkMonitor
 import com.task.tracker.core.designsystem.theme.Theme
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject

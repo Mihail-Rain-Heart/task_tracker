@@ -65,4 +65,8 @@ dependencies {
     implementation(libs.kotlinx.serialization.json)
 
     ksp(libs.hilt.compiler)
+
+    // Worker
+    implementation(libs.workManager)
+    implementation(libs.hilt.work)
 }
